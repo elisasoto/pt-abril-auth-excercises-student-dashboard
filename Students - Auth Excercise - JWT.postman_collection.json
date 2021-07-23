@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "4d348e6a-fcf1-45bd-8828-635dd29e4ea6",
+		"name": "Students - Auth Excercise - JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"ADMIN\",\r\n    \"name\": \"elisa\",\r\n    \"email\": \"elisa12@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"elisa\",\r\n    \"email\": \"elisa12@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"elisa\",\r\n    \"email\": \"elisa1@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Requests on Users",
+			"item": [
+				{
+					"name": "get all users  (if token)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDQxNTcyLCJleHAiOjE2MjcwNDMzNzJ9.v1_hz2La3DQhAGnRYT93xS6AENeFI2DWAxuNwQDUUOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/all-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDM1MDI1LCJleHAiOjE2MjcwMzY4MjV9.HN4Ops8kzYC1xIgaGokb63Lm0WOi0WwEbpYhrF1XDAU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"elisa1@gmail.com\",\r\n    \"name\": \"PALKIIDAKD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/edit/60f9633e8d3ddd4958a84d0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"edit",
+								"60f9633e8d3ddd4958a84d0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDQxNTcyLCJleHAiOjE2MjcwNDMzNzJ9.v1_hz2La3DQhAGnRYT93xS6AENeFI2DWAxuNwQDUUOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"pepe@gmail.com\",\r\n    \"name\": \"pepe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/delete/60f9633e8d3ddd4958a84d0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delete",
+								"60f9633e8d3ddd4958a84d0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDM1MDI1LCJleHAiOjE2MjcwMzY4MjV9.HN4Ops8kzYC1xIgaGokb63Lm0WOi0WwEbpYhrF1XDAU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"pepe\",\r\n    \"email\": \"pepito1@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses Requests",
+			"item": [
+				{
+					"name": "see all courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDQxMTk4LCJleHAiOjE2MjcwNDI5OTh9.L7S_GZm7H4xvYRqLWsqGkCUo_pK7TuAr1JkBgGdyWbM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/all-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"all-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "see one users courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDQxNTcyLCJleHAiOjE2MjcwNDMzNzJ9.v1_hz2La3DQhAGnRYT93xS6AENeFI2DWAxuNwQDUUOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/student-courses/60f9633e8d3ddd4958a84d0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"student-courses",
+								"60f9633e8d3ddd4958a84d0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDM3NjE5LCJleHAiOjE2MjcwMzk0MTl9.ZwocvbAATKYdgXmu75I_PYpjTKpNYqd8x1gxkM3VAZY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"CYBER SECURITY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/edit/60faa09058118f7858f3f42e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"edit",
+								"60faa09058118f7858f3f42e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDM3NjE5LCJleHAiOjE2MjcwMzk0MTl9.ZwocvbAATKYdgXmu75I_PYpjTKpNYqd8x1gxkM3VAZY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"CYBER\",\r\n    \"content\": [\"ssl\", \"certificates\", \"auth\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscribe a user to a course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDQxNTcyLCJleHAiOjE2MjcwNDMzNzJ9.v1_hz2La3DQhAGnRYT93xS6AENeFI2DWAxuNwQDUUOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60faa10b58118f7858f3f436\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/register-student/60fa97da0628e040409e27c6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"register-student",
+								"60fa97da0628e040409e27c6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwZjlhNTY0Yjg3YTZlNjA0NDhkMzFiYiIsImVtYWlsIjoiZWxpc2ExMkBnbWFpbC5jb20ifSwiaWF0IjoxNjI3MDM3NjE5LCJleHAiOjE2MjcwMzk0MTl9.ZwocvbAATKYdgXmu75I_PYpjTKpNYqd8x1gxkM3VAZY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/delete/60faa09058118f7858f3f42e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"delete",
+								"60faa09058118f7858f3f42e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
